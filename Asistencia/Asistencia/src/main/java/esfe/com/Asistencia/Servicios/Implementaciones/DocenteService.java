@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import esfe.com.Asistencia.Modelos.Docente;
 import esfe.com.Asistencia.Repositorios.IDocenteRepository;
 import esfe.com.Asistencia.Servicios.Interfaces.IDocenteService;
-
+  
 @Service
 public class DocenteService implements IDocenteService{
  @Autowired
