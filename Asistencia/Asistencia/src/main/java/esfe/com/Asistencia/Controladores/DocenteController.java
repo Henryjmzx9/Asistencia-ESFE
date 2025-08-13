@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import esfe.com.Asistencia.Modelos.Docente;
 import esfe.com.Asistencia.Servicios.Interfaces.IDocenteService;
-import esfe.com.Utilidades.PdfGeneratorService;
+import esfe.com.Asistencia.Utilidades.PdfGeneratorService;
 import jakarta.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/docentes")
