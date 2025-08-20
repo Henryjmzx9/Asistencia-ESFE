@@ -3,47 +3,69 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>LogIn</title>
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
-    <link th:href="@{/css/login.css}" rel="stylesheet">
+    <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 2.5rem 2rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-card .login-icon {
+            font-size: 3rem;
+            color: #2980b9;
+            margin-bottom: 1rem;
+        }
+        .login-card .login-title {
+            font-weight: bold;
+            font-size: 1.7rem;
+            margin-bottom: 1.5rem;
+            color: #2980b9;
+            letter-spacing: 1px;
+        }
+        .form-control:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 0 0.2rem rgba(41,128,185,.25);
+        }
+        .btn-primary {
+            background: #2980b9;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #2573a6;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-md-2"></div>
-        <div class="col-lg-6 col-md-8 login-box">
-            <div class="col-lg-12 login-key">
-                <i class="fa fa-key" aria-hidden="true"></i>
-            </div>
-            <div class="col-lg-12 login-title">
-                ADMIN PANEL
-            </div>
-
-            <div class="col-lg-12 login-form">
-                <div class="col-lg-12 login-form">
-                    <form th:action="@{/login}" method="post">
-                        <div class="form-group">
-                            <label class="form-control-label">Usuario</label>
-                            <input type="text" name="username" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Clave</label>
-                            <input type="password" name="password" class="form-control" />
-                        </div>
-
-                        <div class="col-lg-12 loginbttm">
-                            <div class="col-lg-6 login-btm login-text">
-                                <!-- Error Message -->
-                            </div>
-                            <div class="col-lg-6 login-btm login-button">
-                                <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-2"></div>
+    <div class="login-card mx-auto">
+        <div class="text-center">
+            <i class="fa fa-user-circle login-icon"></i>
+            <div class="login-title">Panel de Administración</div>
         </div>
+        <form th:action="@{/login}" method="post" autocomplete="off">
+            <div class="mb-3">
+                <label class="form-label">Usuario</label>
+                <input type="text" name="username" class="form-control" placeholder="Ingrese su usuario" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Clave</label>
+                <input type="password" name="password" class="form-control" placeholder="Ingrese su clave" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
